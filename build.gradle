@@ -1,22 +1,17 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.0-rc-190'
-}
-
-group 'KotlinCompilerExample'
-version '1.0-SNAPSHOT'
-
-repositories {
+buildscript {
+  repositories {
+    jcenter()
     maven { url 'http://dl.bintray.com/kotlin/kotlin-eap' }
-    mavenCentral()
+  }
+  dependencies {
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.0-rc-190"
+  }
 }
 
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-}
+subprojects {
+  repositories { jcenter() }
 
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-}
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+  apply plugin: "maven"
+  group = "com.github.satoshun.exammple.kotlincompiler"
+  version = "0.0.1"
 }
