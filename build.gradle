@@ -11,7 +11,10 @@ buildscript {
 }
 
 subprojects {
-  repositories { jcenter() }
+  repositories {
+    jcenter()
+    mavenLocal()
+  }
 
   apply plugin: "maven"
   group = "com.github.satoshun.exammple.kotlincompiler"

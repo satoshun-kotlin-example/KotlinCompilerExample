@@ -12,7 +12,7 @@ import org.jetbrains.kotlin.gradle.plugin.SubpluginOption
 class SamplePlugin : Plugin<Project> {
   override fun apply(target: Project) {
     target.extensions.create(
-      "sample",
+      "kotlincompiler",
       SampleExtension::class.java
     )
   }
@@ -30,7 +30,7 @@ class SampleKotlinGradleSubplugin : KotlinGradleSubplugin<AbstractCompile> {
     androidProjectHandler: Any?,
     kotlinCompilation: KotlinCompilation?
   ): List<SubpluginOption> {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    return listOf()
   }
 
   override fun getCompilerPluginId(): String = "kotlincompiler"
@@ -42,6 +42,6 @@ class SampleKotlinGradleSubplugin : KotlinGradleSubplugin<AbstractCompile> {
   )
 
   override fun isApplicable(project: Project, task: AbstractCompile): Boolean {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    return project.plugins.hasPlugin(SamplePlugin::class.java)
   }
 }

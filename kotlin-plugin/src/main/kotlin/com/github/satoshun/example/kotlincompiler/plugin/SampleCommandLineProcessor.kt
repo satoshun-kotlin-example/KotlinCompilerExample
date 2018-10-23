@@ -13,12 +13,13 @@ class SampleCommandLineProcessor : CommandLineProcessor {
   override val pluginOptions: Collection<CliOption> = listOf()
 
   override fun processOption(option: CliOption, value: String, configuration: CompilerConfiguration) {
+    println(1000)
   }
 }
 
 @AutoService(ComponentRegistrar::class)
 class SampleLogComponentRegistrar : ComponentRegistrar {
   override fun registerProjectComponents(project: MockProject, configuration: CompilerConfiguration) {
-    TODO("not implemented")
+    println(10000)
   }
 }

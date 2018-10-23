@@ -6,7 +6,7 @@ gradlePlugin {
   plugins {
     simplePlugin {
       id = "com.github.satoshun.example.kotlincompiler"
-      implementationClass = "compiler.SamplePlugin"
+      implementationClass = "com.github.satoshun.example.kotlincompiler.SamplePlugin"
     }
   }
 }
