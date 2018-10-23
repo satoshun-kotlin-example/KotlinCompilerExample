@@ -1,3 +1,5 @@
 rootProject.name = 'kotlincompiler'
 
 include 'gradle-plugin'
+include 'kotlin-plugin'
+include 'sample'
